@@ -1,0 +1,7 @@
+1: npx create-react-app my-project
+
+2: instal bootstrap: npm install react-bootstrap bootstrap
+
+3: apagar todos os arquivos desnecessários 
+
+4: importar o bootstrap de forma geral na aplicação no app.js:  import 'bootstrap/dist/css/bootstrap.css'
