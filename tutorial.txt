@@ -5,3 +5,15 @@
 3: apagar todos os arquivos desnecessários 
 
 4: importar o bootstrap de forma geral na aplicação no app.js:  import 'bootstrap/dist/css/bootstrap.css'
+
+5: Configurar Navbar de com o bootstrap, tailwind ou css puro
+
+6: separar componetizção
+
+ROUTES
+
+7: importar o BrowserRouter, Routes, Route do react-dom pra traçar as rotas, depois linkar os componente no Header.js de acordo com o componente
+
+OBS: pra SPA (single page application) usar o Link do react-dom e nos elementos substituir 'href="/"' por 'tag={Link} to="/" '
+
+
