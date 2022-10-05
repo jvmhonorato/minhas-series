@@ -17,3 +17,21 @@ ROUTES
 OBS: pra SPA (single page application) usar o Link do react-dom e nos elementos substituir 'href="/"' por 'tag={Link} to="/" '
 
 
+
+//CONEXÃO DO BACK COM O FRONT
+
+8: baixar o servidor  e instalar o servidor do github como dependencia : npm install https://github.com/devpleno/minhas-series-server
+rodar o servidor em: node node_modules/minhas-series-server/index.js
+
+9: criar em package.json um  : "proxy ": "http://localhost:3002"   para quando houver uma requisição via ajax(axios) ele manda pra um servidor da API rest nesse sena´rio é o localhost:3002 em quanto a app ta rodando no "http://localhost:3000" RODA AMBOS NA MESMA PORTA NA PRODUÇÃO
+
+AXIOS
+
+10:Instalar o axios pra capturar os dados : npm install axios
+
+11: No componete Home.js criamos um useState data, setData, importamos o axios e usamos ele em uma função async detData com o state e o axios.get pegando os dados da API do backend em conjuntos com state, em seguida chamamos a função dentro do useEffect retornando o getData
+
+12: No componente Generos.js tambem importar axios e os hooks passar a rota axios.get(/api/genres) pra retonrar os dados da api renderizados na rota genres
+
+13: criar Navbar importando do react-bootastrap
+

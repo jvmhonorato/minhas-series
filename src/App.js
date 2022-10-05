@@ -1,4 +1,4 @@
-import React from "react";
+
 import Home from "./Home";
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from "./Header";
@@ -7,6 +7,7 @@ import Generos from "./Generos";
 import Lancamentos from "./Lancamentos";
 
 function App() {
+
   
   return (
     <div>
@@ -17,7 +18,7 @@ function App() {
          <Route exact path="/" element={<Home/>}/>
          <Route  path="/generos" element={<Generos/>}/>
          <Route  path="/lancamentos" element={<Lancamentos/>}/>
-
+         
        </Routes>
       </Router>
     </div>
