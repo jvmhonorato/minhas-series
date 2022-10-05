@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import axios from "axios";
 
 const Home = () => {
-    const [data, setData] = useState({})
-    const getData = async() => {
-        const {data} = await axios.get('/api')
-        setData(data)
+   
+    const [data, setData] = useState([])
+    const effectRan = useRef(false)
+
+  useEffect(() => {
+    if(effectRan.current === false){
+    axios
+    .get('/api/genres')
+    .then(res => {
+        setData(res.data.data)
+    })
+    return () => { 
+        effectRan.current = true
     }
-    useEffect(() => {
-        getData()
-    }, [])
+ }
+  },[])
 
     
     return(

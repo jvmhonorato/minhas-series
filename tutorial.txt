@@ -10,6 +10,9 @@
 
 6: separar componetizção
 
+
+
+
 ROUTES
 
 7: importar o BrowserRouter, Routes, Route do react-dom pra traçar as rotas, depois linkar os componente no Header.js de acordo com o componente
@@ -24,6 +27,9 @@ OBS: pra SPA (single page application) usar o Link do react-dom e nos elementos 
 rodar o servidor em: node node_modules/minhas-series-server/index.js
 
 9: criar em package.json um  : "proxy ": "http://localhost:3002"   para quando houver uma requisição via ajax(axios) ele manda pra um servidor da API rest nesse sena´rio é o localhost:3002 em quanto a app ta rodando no "http://localhost:3000" RODA AMBOS NA MESMA PORTA NA PRODUÇÃO
+
+
+
 
 AXIOS
 
@@ -41,5 +47,18 @@ AXIOS
 
 16: usar uma condicional pra mostrar um alert caso não haja genenro na sessão
 
-17:
+
+
+
+ADD GENRES, CATCH DATA FROM FORM
+
+17: Adiconar gênero criar novo componente NewGenre.js e importar a rota em App.js 
+
+18: Em NewGenres.js configurar o form com a <div className='form-group'>, passar um useState name, setName. passar no <input> value={name}, passar no <input > evento onChange={onChange} com uma função que setar um novo valor , a função onChange será responsavel por em capturar o valor declarado no input
+
+19: importar o axios, pra pegar os dados e mandar pra o servidor, criar função save com o axios.post direcionado pra /api/genres, mostrando o then(res) direcionado pro console OBS: qunado o elemento a ser capturado tiver o meso nome do state não precisa passar "name:name" apenas "name"!
+
+20: passar o evento onClick={save} no button  pra capturar os dadso com a função save
+
+21: Criar state success, setSuccess começando em false pra declarar quando os dados foram enviados pra o banco de dados, passar o setSuccess como true no then() da função save(), em seguida importar o Navigate e passar uma condicinal if(success){<Navigate>} pra redirecionar pra página /generos qunado os dados forem enviados
 
