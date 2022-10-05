@@ -35,3 +35,11 @@ AXIOS
 
 13: criar Navbar importando do react-bootastrap
 
+14: OBS: usar o AXIOS pra capturar os dado dentro do useEffect , usar tambem o useRef pra controlar o fluxo de loop do useEffect
+
+15: passar as rows da tabela de forma dinamica usao uma função renderLine em seguida usar o map
+
+16: usar uma condicional pra mostrar um alert caso não haja genenro na sessão
+
+17:
+

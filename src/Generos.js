@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 
@@ -6,19 +6,21 @@ import Table from 'react-bootstrap/Table';
 
 const Generos = () => {
     
-    const [data, setData] = useState({})
-   const getData = async() => {
-        try{
-        const {data} = await axios.get('/api/genres')
-        
-        setData(data.data)
-        }catch(err){
-      }
-     }
-    useEffect(() => {
-        getData()
-    }, [])
-  
+    const [data, setData] = useState([])
+    const effectRan = useRef(false)
+
+  useEffect(() => {
+    if(effectRan.current === false){
+    axios
+    .get('/api/genres')
+    .then(res => {
+        setData(res.data.data)
+    })
+    return () => { 
+        effectRan.current = true
+    }
+ }
+  },[])
 
     const renderLine = record => {
         return (
@@ -28,6 +30,17 @@ const Generos = () => {
                 <td ><button>+</button></td>
             </tr>
 
+        )
+    }
+
+    if (data.length === 0){
+        return(
+            <div>
+                <h1>Gêneros</h1>
+                <div className="alert alert-warning" role='alert'>
+                    Você não possui gêneros criados!
+                </div>
+            </div>
         )
     }
 
