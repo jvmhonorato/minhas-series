@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Generos from "./Generos";
 import Lancamentos from "./Lancamentos";
 import NewGenre from "./NewGenre";
+import UpdateGenre from "./UpdateGenre";
+
 
 function App() {
 
@@ -17,9 +19,10 @@ function App() {
        <Routes>
 
          <Route exact path="/" element={<Home/>}/>
-         <Route  path="/generos" element={<Generos/>}/>
-         <Route  path="/generos/novo" element={<NewGenre/>}/>
-         <Route  path="/lancamentos" element={<Lancamentos/>}/>
+         <Route exact  path="/generos" element={<Generos/>}/>
+         <Route  exact path="/generos/novo" element={<NewGenre/>}/>
+         <Route  exact path="/lancamentos" element={<Lancamentos/>}/>
+         <Route  exact path="/generos/:id" element={<UpdateGenre/>}/>
          
        </Routes>
       </Router>

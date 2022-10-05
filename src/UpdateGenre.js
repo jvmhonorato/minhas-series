@@ -1,17 +1,30 @@
-import React, {useState}  from 'react'
+import React, {useState, useEffect}  from 'react'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 
 
-const NewGenre = () => {
+const UpdateGenre = (props) => {
     const [name, setName] = useState('')
     const [success, setSuccess] = useState(false)
+  const {match} = props
+
+    useEffect(() => {
+       
+        axios.get('/api/genres/1').then(res => {
+            setName(res.data.name)
+        })
+     
+        
+    
+    },[])
+console.log(match)
+
     const onChange = (evt) =>{
         setName(evt.target.value)
     }
 const save = () => {
-    axios.post('/api/genres', {
+    axios.put('/api/genres/', {
         name
     }).then(res => {
         console.log(res)
@@ -23,7 +36,7 @@ if(success){
 }
     return (
         <div className='container'>
-                <h1>Novo Gênero </h1>
+                <h1>Editar Gênero </h1>
                
                 <form>
                     <div className="form-group">
@@ -37,4 +50,4 @@ if(success){
           </div>
       )
 }
-export default NewGenre
+export default UpdateGenre

@@ -50,15 +50,38 @@ AXIOS
 
 
 
-ADD GENRES, CATCH DATA FROM FORM
+CRUD GENRES, CATCH DATA FROM FORM
 
 17: Adiconar gênero criar novo componente NewGenre.js e importar a rota em App.js 
 
 18: Em NewGenres.js configurar o form com a <div className='form-group'>, passar um useState name, setName. passar no <input> value={name}, passar no <input > evento onChange={onChange} com uma função que setar um novo valor , a função onChange será responsavel por em capturar o valor declarado no input
 
+CREATE
 19: importar o axios, pra pegar os dados e mandar pra o servidor, criar função save com o axios.post direcionado pra /api/genres, mostrando o then(res) direcionado pro console OBS: qunado o elemento a ser capturado tiver o meso nome do state não precisa passar "name:name" apenas "name"!
 
 20: passar o evento onClick={save} no button  pra capturar os dadso com a função save
 
 21: Criar state success, setSuccess começando em false pra declarar quando os dados foram enviados pra o banco de dados, passar o setSuccess como true no then() da função save(), em seguida importar o Navigate e passar uma condicinal if(success){<Navigate>} pra redirecionar pra página /generos qunado os dados forem enviados
 
+DELETE
+22: Em Genero.js na função renderLine() na tag <button> inserir evento onClick com a função chamndo a função  deleteGenre(record.id)
+
+23: Na função deleteGenre() passar o axios.delete('/api/genres',+ id) passando o ID depois da chamda pra ficar dinamico
+
+24: add um filter() na função deleteGenres pra alterar o estado assim que o objeto for deletado!
+
+
+UPDATE
+25: editar Gênero criar componente UpdateGenre.js
+
+26: add no componente Generos.js na função renderLine() que é renderiza as linha dinamicamente na tabela e passar  um <button> com o evento onclick={} passando a função routeChange
+
+27: importar o useNavigate de react-dom  criar a função routeChange passando o navigate linkado ao caminho da pagina no qual será redirecionada ao clicar no botão, no caso o path /update que contem o component UpdateGenre
+
+28: no componente UpdateGenre.js 
+
+
+
+OBS...
+BUTTON NAVIGATE PAGES
+OBS:importar o useNavigate de react-dom  criar a função routeChange passando o navigate linkado ao caminho da pagina no qual será redirecionada ao clicar no botão no caso

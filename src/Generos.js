@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
+
 
 
 
@@ -8,6 +10,7 @@ const Generos = () => {
     
     const [data, setData] = useState([])
     const effectRan = useRef(false)
+    const { id } = useParams();
 
   useEffect(() => {
     if(effectRan.current === false){
@@ -22,16 +25,46 @@ const Generos = () => {
  }
   },[])
 
+   //UPDATE BUTTON ROUTE
+   let navigate = useNavigate(); 
+   const routeChange = () =>{ 
+     let path = `/generos/novo`; 
+     navigate(path);
+   }
+
+   //ADD BUTTON ROUTE
+   let navigate2 = useNavigate();
+   const routeChangeNewGenre = () =>{ 
+    
+     let path2 = `/generos/${Number(id) + 1}`; 
+     navigate2(path2);
+   }
+
     const renderLine = record => {
         return (
             <tr key={record.id}>
                 <th scope="row" >{record.id}</th>
                 <td >{record.name}</td>
-                <td ><button>+</button></td>
-            </tr>
+                <td >
+                    <button className="btn btn-danger" onClick={() => deleteGenre(record.id)}>Remover</button>
+                    <button className="btn btn-primary"  onClick={routeChangeNewGenre}>Editar</button>
+                    
+                </td>
+                </tr>
 
         )
     }
+    //DELETE
+    const deleteGenre = id => {
+        axios
+        .delete('/api/genres/' + id)
+        .then(res => {
+            //manege state to bring back data filter objects
+            const filtrado = data.filter(item => item.id !== id)
+            setData(filtrado)
+        })
+    }
+   
 
     if (data.length === 0){
         return(
@@ -49,7 +82,7 @@ const Generos = () => {
       
             <div className="container">
                 <h1>Gêneros</h1>
-
+               
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -62,8 +95,10 @@ const Generos = () => {
                             {data.map(renderLine)}
                         </tbody>
                 </Table>
-
-                <pre>{JSON.stringify(data)}</pre>
+                <br/>
+                
+                <button className="btn btn-success"  onClick={routeChange}>Add</button>
+               
              </div>
     
         
