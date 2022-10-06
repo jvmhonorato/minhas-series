@@ -1,18 +1,20 @@
 import React, {useState, useEffect, useRef}  from 'react'
 import axios from 'axios'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 
 
-const UpdateGenre = () => {
+const UpdateGenre = (props) => {
+    const params = useParams(); 
     const [name, setName] = useState('')
     const [success, setSuccess] = useState(false)
     const effectRan = useRef(false)
+    const id = params.id; 
     
 
     useEffect(() => {
         if(effectRan.current === false){
-        axios.get('/api/genres/2')
+        axios.get('/api/genres/'+ id)
         .then(res => {
             setName(res.data.name)
             
@@ -22,14 +24,14 @@ const UpdateGenre = () => {
             effectRan.current = true
         }
      }
-    },[])
-       
+    },[id])
+       console.log(props)
 
     const onChange = (evt) =>{
         setName(evt.target.value)
     }
 const save = () => {
-    axios.put('/api/genres/', {
+    axios.put('/api/genres/'+ id, {
         name
     }).then(res => {
         console.log(res)

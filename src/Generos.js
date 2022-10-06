@@ -43,7 +43,7 @@ const Generos = () => {
                 <td >
                     <button className="btn btn-danger" onClick={() => deleteGenre(record.id)}>Remover</button>
                     
-                    <Link to={'/generos/' + record.id}>Editar</Link>
+                    <Link to={'/generos/' + record.id}className='btn btn-warning'>Editar</Link>
                     
                 </td>
                 </tr>

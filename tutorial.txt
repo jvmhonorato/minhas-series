@@ -75,13 +75,16 @@ UPDATE
 25: editar Gênero criar componente UpdateGenre.js
 
 
-26:Ainda no componente Genero.js importar o Link do react-dom, inserir na função renderLine que renderiza as linhas da tabela   e passar o caminho com o to={'/generos' + record.id} 
+26:Ainda no componente Genero.js importar o Link do react-dom, inserir na função renderLine que renderiza as linhas da tabela   e passar o caminho com o: <Link to={'/generos/' + record.id} className='btn btn-warning'>Editar</Link> com a classe btn pra virar botão
 
-27: no componente App.js passar a nova rota UpdateGenre com a rota dinamica : <Route  exact path="/generos/:id" element={<UpdateGenre/>}/> 
+27: no componente App.js passar a nova rota UpdateGenre com a rota dinamica "/:id" : 
+<Route  exact path="/generos/:id" element={<UpdateGenre/>}/> 
 
-28: No componete UpdateGenre.js 
+28: No componete UpdateGenre.js imnportar useParams em react-router-dom que é responsável por retornar os valores das keys passadas dinamicamente na URL, estanciar o useParams() em params, em seguida estanciar em id o params.id .
 
+29: Dentro de usEffect no axios passar a variável "id" na requisição e na dependencia do useEffect
 
+30: Em seguida na função save  spassar o metodo put no axios e tambem passar o "id" apos a requisição 
 
 
 OBS...
