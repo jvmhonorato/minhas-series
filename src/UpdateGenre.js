@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from 'react'
+import React, {useState, useEffect, useRef}  from 'react'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
@@ -7,18 +7,22 @@ import Nav from 'react-bootstrap/Nav';
 const UpdateGenre = (props) => {
     const [name, setName] = useState('')
     const [success, setSuccess] = useState(false)
-  const {match} = props
+    const effectRan = useRef(false)
+     
 
     useEffect(() => {
-       
-        axios.get('/api/genres/1').then(res => {
+        if(effectRan.current === false){
+        axios.get('/api/genres/1')
+        .then(res => {
             setName(res.data.name)
         })
-     
-        
-    
+        return () => { 
+            effectRan.current = true
+        }
+     }
+   
     },[])
-console.log(match)
+        console.log(props)
 
     const onChange = (evt) =>{
         setName(evt.target.value)
@@ -47,6 +51,7 @@ if(success){
                     <br/>
                     <Nav.Link href="/generos">Voltar</Nav.Link>
                 </form>
+                
           </div>
       )
 }

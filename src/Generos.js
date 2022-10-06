@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 
@@ -10,7 +10,7 @@ const Generos = () => {
     
     const [data, setData] = useState([])
     const effectRan = useRef(false)
-    const { id } = useParams();
+   
 
   useEffect(() => {
     if(effectRan.current === false){
@@ -22,7 +22,7 @@ const Generos = () => {
     return () => { 
         effectRan.current = true
     }
- }
+   }
   },[])
 
    //UPDATE BUTTON ROUTE
@@ -32,13 +32,7 @@ const Generos = () => {
      navigate(path);
    }
 
-   //ADD BUTTON ROUTE
-   let navigate2 = useNavigate();
-   const routeChangeNewGenre = () =>{ 
-    
-     let path2 = `/generos/${Number(id) + 1}`; 
-     navigate2(path2);
-   }
+  
 
     const renderLine = record => {
         return (
@@ -47,7 +41,8 @@ const Generos = () => {
                 <td >{record.name}</td>
                 <td >
                     <button className="btn btn-danger" onClick={() => deleteGenre(record.id)}>Remover</button>
-                    <button className="btn btn-primary"  onClick={routeChangeNewGenre}>Editar</button>
+                    
+                    <Link to={'/generos/' + record.id}>Editar</Link>
                     
                 </td>
                 </tr>
