@@ -24,6 +24,7 @@ const Generos = () => {
     }
    }
   },[])
+  
 
    //UPDATE BUTTON ROUTE
    let navigate = useNavigate(); 

@@ -4,25 +4,26 @@ import { Navigate } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav';
 
 
-const UpdateGenre = (props) => {
+const UpdateGenre = () => {
     const [name, setName] = useState('')
     const [success, setSuccess] = useState(false)
     const effectRan = useRef(false)
-     
+    
 
     useEffect(() => {
         if(effectRan.current === false){
-        axios.get('/api/genres/1')
+        axios.get('/api/genres/2')
         .then(res => {
             setName(res.data.name)
+            
         })
         return () => { 
+            
             effectRan.current = true
         }
      }
-   
     },[])
-        console.log(props)
+       
 
     const onChange = (evt) =>{
         setName(evt.target.value)

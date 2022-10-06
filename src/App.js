@@ -1,6 +1,6 @@
 
 import Home from "./Home";
-import {BrowserRouter as Router, Routes, Route,useParams } from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from "./Header";
 import 'bootstrap/dist/css/bootstrap.css'
 import Generos from "./Generos";
@@ -10,8 +10,8 @@ import UpdateGenre from "./UpdateGenre";
 
 
 function App() {
-  const { id } = useParams();
   
+ 
   return (
     <div>
     <Router>
