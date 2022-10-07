@@ -105,3 +105,5 @@ START series
 35: criar componete InfoSerie.js, usando useEffect com o axios pra fazer a requisição,  usamos tambem o useParams pra poder buscar o id passado dinamicamente na URL  
 
 36: Passamos o Route em App.js com o ":id" dinamico, e em Series.js alteramos a rota do Link na Função renderLine
+
+37: no JSX do componete InfoSerie criar uuma sequencia de <div> passando row e col na proporção de 1/12 avos no 12 é o interioa da tela da esquerda pra direita e dentro de cada <div> passar <img src={data.post}>
