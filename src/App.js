@@ -9,6 +9,7 @@ import Lancamentos from "./Lancamentos";
 import NewGenre from "./NewGenre";
 import UpdateGenre from "./UpdateGenre";
 import NewSerie from "./NewSerie";
+import InfoSerie from "./InfoSerie";
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
          <Route  exact path="/series/novo" element={<NewSerie/>}/>
          <Route  exact path="/lancamentos" element={<Lancamentos/>}/>
          <Route  exact path="/generos/:id" element={<UpdateGenre/>}/>
+         <Route  exact path="/series/:id" element={<InfoSerie/>}/>
          
        </Routes>
       </Router>

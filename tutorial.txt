@@ -100,4 +100,8 @@ START series
 
 33: criar o componente Series.js baseado no Genero.js mudando o nome do componente, a rota de requiseção do axios pra: api/series  e mudar tambem o conxtexto das demais funções pra /series
 
-34: Criar novo componente NewSerie.js
+34: Criar novo componente NewSerie.js com a mesma estrutura de NewGenres.js
+
+35: criar componete InfoSerie.js, usando useEffect com o axios pra fazer a requisição,  usamos tambem o useParams pra poder buscar o id passado dinamicamente na URL  
+
+36: Passamos o Route em App.js com o ":id" dinamico, e em Series.js alteramos a rota do Link na Função renderLine
