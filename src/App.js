@@ -4,9 +4,11 @@ import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from "./Header";
 import 'bootstrap/dist/css/bootstrap.css'
 import Generos from "./Generos";
+import Series from "./Series";
 import Lancamentos from "./Lancamentos";
 import NewGenre from "./NewGenre";
 import UpdateGenre from "./UpdateGenre";
+import NewSerie from "./NewSerie";
 
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
 
          <Route exact path="/" element={<Home/>}/>
          <Route exact  path="/generos" element={<Generos/>}/>
+         <Route exact  path="/series" element={<Series/>}/>
          <Route  exact path="/generos/novo" element={<NewGenre/>}/>
+         <Route  exact path="/series/novo" element={<NewSerie/>}/>
          <Route  exact path="/lancamentos" element={<Lancamentos/>}/>
          <Route  exact path="/generos/:id" element={<UpdateGenre/>}/>
          

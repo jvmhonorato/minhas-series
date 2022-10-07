@@ -90,3 +90,14 @@ UPDATE
 OBS...
 BUTTON NAVIGATE PAGES
 OBS:importar o useNavigate de react-dom  criar a função routeChange passando o navigate linkado ao caminho da pagina no qual será redirecionada ao clicar no botão no caso
+
+
+START series
+
+31:Em Header.js add novo seletor na Navbar com o caminho pra o compponete Series
+
+32: Em App.js criar o routeador traçando a rota /series pra o componente <Series/>
+
+33: criar o componente Series.js baseado no Genero.js mudando o nome do componente, a rota de requiseção do axios pra: api/series  e mudar tambem o conxtexto das demais funções pra /series
+
+34: Criar novo componente NewSerie.js
