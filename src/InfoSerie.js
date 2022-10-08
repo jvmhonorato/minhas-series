@@ -8,7 +8,7 @@ const InfoSerie = () => {
     const [name, setName] = useState('')
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState({})
-    
+    const [mode,setMode] = useState('INFO')
     const params = useParams()
     const id = params.id
 
@@ -72,9 +72,14 @@ if(success){
                     </div>
                 </div>
             </header>
+            <div>
+                <button onClick={() => setMode('EDIT')}>Editar</button>
+            </div>
+            {mode === 'EDIT' &&  
             <div  className='container'>
                 <h1>Info Serie </h1>
                <pre>{JSON.stringify(data)}</pre>
+               <button onClick={() => setMode('INFO')}>Cancelar a edição</button>
                 <form>
                     <div className="form-group">
                         <label htmlFor="name" className="form-label">Nome</label>
@@ -85,6 +90,7 @@ if(success){
                     <Nav.Link href="/series">Voltar</Nav.Link>
                 </form>
               </div>
+              }
           </div>
       )
 }

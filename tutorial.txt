@@ -107,3 +107,11 @@ START series
 36: Passamos o Route em App.js com o ":id" dinamico, e em Series.js alteramos a rota do Link na Função renderLine
 
 37: no JSX do componete InfoSerie criar uuma sequencia de <div> passando row e col na proporção de 1/12 avos no 12 é o interioa da tela da esquerda pra direita e dentro de cada <div> passar <img src={data.post}>
+
+38: criar uma variável masterHeader e passar na tag <header style={masterHeader}> nessa variavel carrega o dimensionameto do cabeçaçalho junto com o tamplate que vem da API
+
+
+RENDER KEY
+39:Criar um state mode, setMode , e com ele criar uma condicional tipo chave boleana pra renderiza o que está dentro DIV ou mão {node === "EDIT" && <div></div>}, e acima crair uma <div> com um <button onClick={'EDIT'}> com um evento EDIT que é diferente do estado original do state "INFO" por sua vez gerando uma diferenã de TRUE e fALSE
+
+40: Aplicar tambem um dentro da <div> que estã com a renderização condicionada um <button onClick={()=> setMode('INFO)}> pra cnacelar a edição
