@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Badge from 'react-bootstrap/Badge';
 
 const InfoSerie = () => {
-    const [name, setName] = useState('')
+    const [form, setForm] = useState({})
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState({})
     const [mode,setMode] = useState('INFO')
@@ -13,10 +13,14 @@ const InfoSerie = () => {
     const id = params.id
 
 
+    //use two setStates
     useEffect(() => {
         
-        axios.get('/api/series/'+ id).then(res => {
+        axios
+        .get('/api/series/'+ id)
+        .then(res => {
             setData(res.data)
+            setForm(res.data)
         })
      
     },[id])
@@ -33,13 +37,24 @@ const InfoSerie = () => {
     }
 
 
-    
-    const onChange = (evt) =>{
-        setName(evt.target.value)
+    //use spread operator to take all forms, select "name"
+    // use dinamyc key, put the firt funciton: field into of [field]
+    const onChange = field => (evt) =>{
+        setForm({
+            ...form,
+          [field]: evt.target.value
+        })
+    }
+
+    const onChange2 = (evt) =>{
+        setForm({
+            ...form,
+          comments: evt.target.value
+        })
     }
 const save = () => {
     axios.post('/api/series', {
-        name
+        form
     }).then(res => {
         console.log(res)
         setSuccess(true)
@@ -73,19 +88,23 @@ if(success){
                 </div>
             </header>
             <div>
-                <button onClick={() => setMode('EDIT')}>Editar</button>
+                <button  className="btn btn-primary" onClick={() => setMode('EDIT')}>Editar</button>
             </div>
             {mode === 'EDIT' &&  
             <div  className='container'>
                 <h1>Info Serie </h1>
-               <pre>{JSON.stringify(data)}</pre>
-               <button onClick={() => setMode('INFO')}>Cancelar a edição</button>
+               <pre>{JSON.stringify(form)}</pre>
+               <button className="btn btn-danger" onClick={() => setMode('INFO')}>Cancelar a edição</button>
                 <form>
                     <div className="form-group">
                         <label htmlFor="name" className="form-label">Nome</label>
-                        <input type="text" value={name} onChange={onChange} className="form-control" id="name"placeholder='Nome do Gênero'/><br/>
-                        <button type="button" onClick={save} className="btn btn-primary">Salvar</button>
+                        <input type="text" value={form.name} onChange={onChange('name')} className="form-control" id="name"placeholder='Nome da seire'/><br/>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="name" className="form-label">Comentários</label>
+                        <input type="text" value={form.comments} onChange={onChange('comments')} className="form-control" id="name"placeholder='Comentários'/><br/>
+                    </div>
+                    <button type="button" onClick={save} className="btn btn-primary">Salvar</button>
                     <br/>
                     <Nav.Link href="/series">Voltar</Nav.Link>
                 </form>

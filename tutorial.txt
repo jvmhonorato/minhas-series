@@ -115,3 +115,17 @@ RENDER KEY
 39:Criar um state mode, setMode , e com ele criar uma condicional tipo chave boleana pra renderiza o que está dentro DIV ou mão {node === "EDIT" && <div></div>}, e acima crair uma <div> com um <button onClick={'EDIT'}> com um evento EDIT que é diferente do estado original do state "INFO" por sua vez gerando uma diferenã de TRUE e fALSE
 
 40: Aplicar tambem um dentro da <div> que estã com a renderização condicionada um <button onClick={()=> setMode('INFO)}> pra cnacelar a edição
+
+
+41: OBS: mudar o state name pra form passar pelo useEffect usando spread operator pra pegar o valores anterioers e renderizar no campo input, passar o fomr.name em value={} no input
+
+
+
+COMMENTS
+ 42:Criar função onChange2 e e passar como evento do <input>coments, no input pegar o value={form.comments} pois o commnets é o valor que está la na API 
+
+ 
+ FUNCTION INTO FUNCTION
+ OBS: passsar "field =>" na função onchange, quanto há uma função dentro da função chamar no evento: onClick={onChange()}  ao inves de onClick={onChange}
+ dessa forma deixando a função onChange dinmamica, na função passar:     ...form, [field]: evt.target.value 
+ dessa forma com a função dentro de [], basta passar a key que vem da API dentro do evento onClick no momento da chamda: onClick={onChange('key')}
