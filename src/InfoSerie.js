@@ -35,7 +35,7 @@ const InfoSerie = () => {
             setGenres(res.data.data)
         })
      
-    })
+    },[])
     
     //custom header
     const masterHeader = {
@@ -60,15 +60,14 @@ const InfoSerie = () => {
 
 
 const save = () => {
-    axios.post('/api/series', {
-        form
-    }).then(res => {
+    axios.put('/api/series/'+ id ,form)
+    .then(res => {
         console.log(res)
         setSuccess(true)
     })
 }
 if(success){
-   return <Navigate to='/series'/>
+  // return <Navigate to='/series'/>
 }
     return (
         <div>
@@ -88,6 +87,7 @@ if(success){
                             <Badge pill bg="warning">
                                 Para assitir
                             </Badge>{' '}
+                            Gênero: {data.genre_name}
                             </div>
                         </div>
                       </div>
@@ -113,8 +113,8 @@ if(success){
                     </div>
                     <div className="form-group">
                     <label htmlFor="name">Gênero</label>
-                    <select className="form-control" onChange={onChange('genre')}  >
-                        {genres.map(genre => <option key={genre.id} value={genre.id} select={genre.id ? form.genre:undefined}>{genre.name}</option>)}
+                    <select className="form-control" onChange={onChange('genre_id')}  >
+                        {genres.map(genre => <option key={genre.id} value={genre.id} select={genre.id === form.genre}>{genre.name}</option>)}
                         
                         </select>
                     </div>

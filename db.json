@@ -5,8 +5,8 @@
       "status": "WATCHED",
       "genre_id": 1,
       "comments": "",
-      "poster": "//image.tmdb.org/t/p/original/yVUAfbrP5HDJugXraB7KQS0yz6Z.jpg",
-      "background": "//image.tmdb.org/t/p/original/piuRhGiQBYWgW668eSNJ2ug5uAO.jpg"
+      "poster": "//image.tmdb.org/t/p/original/qUmlmYWx3WndM01DHOTrmeiklVW.jpg",
+      "background": "//image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg"
     },
     "1665101971385": {
       "name": "Teste",
@@ -15,11 +15,13 @@
     },
     "1665101985031": {
       "name": "Hanna ",
+      "genre_id": 1665003099204,
       "poster": "//image.tmdb.org/t/p/original/osUjcyKU50vvxUl2qq5CHP1hBZ2.jpg",
       "background": "//image.tmdb.org/t/p/original/9tOGPeh59sK3WEqXBvPad5O363X.jpg"
     },
     "1665135023972": {
       "name": "maria neide marques honorato",
+      "genre_id": null,
       "poster": "",
       "background": ""
     }
