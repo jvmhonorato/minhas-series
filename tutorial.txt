@@ -135,4 +135,6 @@ GENRES SERIES
 
 43: criar um state genres, setGenres, passar um novo useEffect o axios.get('api/gernes') retornarndo o setGenres(res.data.data) sem dependencias
 
-44: passar um <select> do bootstrap  atraves .map()
+44: passar um <select> do bootstrap  atraves .map() com os genres.id para ser renderizados como opção
+
+45: Na função SAVE passar o + ID e o FORM n segundo parâmetro seguido do  metodo PUT 

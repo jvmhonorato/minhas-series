@@ -15,7 +15,7 @@
     },
     "1665101985031": {
       "name": "Hanna ",
-      "genre_id": 1665003099204,
+      "genre_id": 1665452209927,
       "poster": "//image.tmdb.org/t/p/original/osUjcyKU50vvxUl2qq5CHP1hBZ2.jpg",
       "background": "//image.tmdb.org/t/p/original/9tOGPeh59sK3WEqXBvPad5O363X.jpg"
     },
@@ -27,17 +27,17 @@
     }
   },
   "genres": {
-    "1": {
-      "name": "Ação"
-    },
-    "2": {
-      "name": "Comédia"
-    },
     "1665003099204": {
       "name": "prato"
     },
     "1665103150654": {
       "name": "Hanna cruz"
+    },
+    "1665452209927": {
+      "name": "Ação"
+    },
+    "1665452217612": {
+      "name": "Comédia"
     }
   },
   "count": 0
