@@ -129,3 +129,10 @@ COMMENTS
  OBS: passsar "field =>" na função onchange, quanto há uma função dentro da função chamar no evento: onClick={onChange()}  ao inves de onClick={onChange}
  dessa forma deixando a função onChange dinmamica, na função passar:     ...form, [field]: evt.target.value 
  dessa forma com a função dentro de [], basta passar a key que vem da API dentro do evento onClick no momento da chamda: onClick={onChange('key')}
+
+
+GENRES SERIES
+
+43: criar um state genres, setGenres, passar um novo useEffect o axios.get('api/gernes') retornarndo o setGenres(res.data.data) sem dependencias
+
+44: passar um <select> do bootstrap  atraves .map()

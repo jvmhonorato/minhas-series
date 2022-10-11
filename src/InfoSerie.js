@@ -8,9 +8,11 @@ const InfoSerie = () => {
     const [form, setForm] = useState({})
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState({})
-    const [mode,setMode] = useState('INFO')
+    const [mode,setMode] = useState('EDIT')
+    const [genres, setGenres]= useState([])
     const params = useParams()
     const id = params.id
+   
 
 
     //use two setStates
@@ -24,6 +26,16 @@ const InfoSerie = () => {
         })
      
     },[id])
+
+    useEffect(() => {
+       
+        axios
+        .get('/api/genres')
+        .then(res => {
+            setGenres(res.data.data)
+        })
+     
+    })
     
     //custom header
     const masterHeader = {
@@ -46,12 +58,7 @@ const InfoSerie = () => {
         })
     }
 
-    const onChange2 = (evt) =>{
-        setForm({
-            ...form,
-          comments: evt.target.value
-        })
-    }
+
 const save = () => {
     axios.post('/api/series', {
         form
@@ -101,12 +108,21 @@ if(success){
                         <input type="text" value={form.name} onChange={onChange('name')} className="form-control" id="name"placeholder='Nome da seire'/><br/>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="name" className="form-label">Comentários</label>
+                        <label htmlFor="name">Comentário</label>
                         <input type="text" value={form.comments} onChange={onChange('comments')} className="form-control" id="name"placeholder='Comentários'/><br/>
                     </div>
+                    <div className="form-group">
+                    <label htmlFor="name">Gênero</label>
+                    <select className="form-control" onChange={onChange('genre')}  >
+                        {genres.map(genre => <option key={genre.id} value={genre.id} select={genre.id ? form.genre:undefined}>{genre.name}</option>)}
+                        
+                        </select>
+                    </div>
+                    <br/><br/>
                     <button type="button" onClick={save} className="btn btn-primary">Salvar</button>
-                    <br/>
-                    <Nav.Link href="/series">Voltar</Nav.Link>
+                    <br/><br/>
+                    <Nav.Link className="btn btn-warning" href="/series">Voltar</Nav.Link>
+                    <br/><br/>
                 </form>
               </div>
               }
