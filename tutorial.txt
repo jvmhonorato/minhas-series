@@ -138,3 +138,9 @@ GENRES SERIES
 44: passar um <select> do bootstrap  atraves .map() com os genres.id para ser renderizados como opção
 
 45: Na função SAVE passar o + ID e o FORM n segundo parâmetro seguido do  metodo PUT 
+
+ADD RADIO 
+
+46: copiar modelo do bootstrap de radio button, depois passar um evento onClick com uma função 'seleciona('VALUE')', passar na função dentro do evento onClick o value do <input>
+
+47: Criar a função seleciona passando outra função dentro pra deixar o value dinâmico igualmente a função onChange chamando o setForm com o spread operator de ...form em seguida passando staus: value 

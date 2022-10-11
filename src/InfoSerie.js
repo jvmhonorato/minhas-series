@@ -58,6 +58,12 @@ const InfoSerie = () => {
         })
     }
 
+    const seleciona = value => () => {
+        setForm({
+            ...form,
+            status: value
+        }) 
+    }
 
 const save = () => {
     axios.put('/api/series/'+ id ,form)
@@ -118,6 +124,18 @@ if(success){
                         
                         </select>
                     </div>
+                    <div className="form-check">
+                        <input className="form-check-input" type="radio" name="status" id="assistido" value='ASSISTIDO'  onClick={seleciona('ASSISTIDO')} />
+                        <label className="form-check-label" htmlFor="assistido">
+                            Assistido
+                        </label>
+                        </div>
+                        <div className="form-check">
+                        <input className="form-check-input" type="radio" name="status" id="paraAssitir" value='PARA_ASSISTIR' onClick={seleciona('PARA_ASSISTIR')}/>
+                        <label className="form-check-label" htmlFor="paraAssistir">
+                            Para assistir
+                        </label>
+                        </div>
                     <br/><br/>
                     <button type="button" onClick={save} className="btn btn-primary">Salvar</button>
                     <br/><br/>
