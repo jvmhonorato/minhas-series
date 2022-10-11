@@ -144,3 +144,13 @@ ADD RADIO
 46: copiar modelo do bootstrap de radio button, depois passar um evento onClick com uma função 'seleciona('VALUE')', passar na função dentro do evento onClick o value do <input>
 
 47: Criar a função seleciona passando outra função dentro pra deixar o value dinâmico igualmente a função onChange chamando o setForm com o spread operator de ...form em seguida passando staus: value 
+
+
+SAVE STATUS 
+48: criar novo state genreId, setGenreId
+ passar no segundo useEffect a dependencia [data] estanciar data em genres depois usar .find() pra assossiaros dados do genre ao value do input do check radio e estanciar em encotrado, passar no setGenresId(encontrado.id) na condicional if(encontrado)
+
+ 49:pra SALVAR aplicar: axios.put('/api/series/'+ id ,{...form, genre_name: genreId})
+
+
+50: mudar o BADGE criando um {data.staus === 'STAUS' && <Badage>} mostrar badage de acordo com status

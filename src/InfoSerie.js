@@ -10,6 +10,7 @@ const InfoSerie = () => {
     const [data, setData] = useState({})
     const [mode,setMode] = useState('EDIT')
     const [genres, setGenres]= useState([])
+    const [genreId, setGenreId] = useState('')
     const params = useParams()
     const id = params.id
    
@@ -33,9 +34,15 @@ const InfoSerie = () => {
         .get('/api/genres')
         .then(res => {
             setGenres(res.data.data)
+            const genres = res.data.data
+            const encontrado = genres.find(value => data.genre === value.name)
+            
+            if(encontrado){
+                setGenreId(encontrado.id)
+            }
         })
      
-    },[])
+    },[data])
     
     //custom header
     const masterHeader = {
@@ -66,7 +73,7 @@ const InfoSerie = () => {
     }
 
 const save = () => {
-    axios.put('/api/series/'+ id ,form)
+    axios.put('/api/series/'+ id ,{...form, genre_name: genreId})
     .then(res => {
         console.log(res)
         setSuccess(true)
@@ -87,12 +94,12 @@ if(success){
                         <div className='col-9'>
                             <h1 className='font-weight-light text-white'>{data.name}</h1>
                             <div className='lead text-white'>
-                            <Badge pill bg="success">
+                           {data.status === 'ASSISTIDO' && <Badge pill bg="success">
                             Assistido
-                             </Badge>{' '}
-                            <Badge pill bg="warning">
+                             </Badge>}
+                            {data.status === 'PARA_ASSISTIR' && <Badge pill bg="warning">
                                 Para assitir
-                            </Badge>{' '}
+                            </Badge>}
                             Gênero: {data.genre_name}
                             </div>
                         </div>

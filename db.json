@@ -2,8 +2,8 @@
   "series": {
     "1": {
       "name": "La casa de papel",
-      "status": "WATCHED",
-      "genre_id": 1,
+      "status": "ASSISTIDO",
+      "genre_id": null,
       "comments": "",
       "poster": "//image.tmdb.org/t/p/original/qUmlmYWx3WndM01DHOTrmeiklVW.jpg",
       "background": "//image.tmdb.org/t/p/original/gFZriCkpJYsApPZEF3jhxL4yLzG.jpg"
@@ -15,7 +15,8 @@
     },
     "1665101985031": {
       "name": "Hanna ",
-      "genre_id": 1665452209927,
+      "status": "ASSISTIDO",
+      "genre_id": 1665103150654,
       "poster": "//image.tmdb.org/t/p/original/osUjcyKU50vvxUl2qq5CHP1hBZ2.jpg",
       "background": "//image.tmdb.org/t/p/original/9tOGPeh59sK3WEqXBvPad5O363X.jpg"
     },
