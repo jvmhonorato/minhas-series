@@ -28,7 +28,7 @@ if(success){
                 <form>
                     <div className="form-group">
                         <label htmlFor="name" className="form-label">Nome</label>
-                        <input type="text" value={name} onChange={onChange} className="form-control" id="name"placeholder='Nome do Gênero'/><br/>
+                        <input type="text" value={name} onChange={onChange} className="form-control" id="name"placeholder='Nome da Serie'/><br/>
                         <button type="button" onClick={save} className="btn btn-primary">Salvar</button>
                     </div>
                     <br/>

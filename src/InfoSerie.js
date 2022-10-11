@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Badge from 'react-bootstrap/Badge';
 
 const InfoSerie = () => {
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState({name:''})
     const [success, setSuccess] = useState(false)
     const [data, setData] = useState({})
     const [mode,setMode] = useState('EDIT')
@@ -80,7 +80,7 @@ const save = () => {
     })
 }
 if(success){
-  // return <Navigate to='/series'/>
+   return <Navigate to='/series'/>
 }
     return (
         <div>
@@ -107,7 +107,7 @@ if(success){
                     </div>
                 </div>
             </header>
-            <div>
+            <div className='container'>
                 <button  className="btn btn-primary" onClick={() => setMode('EDIT')}>Editar</button>
             </div>
             {mode === 'EDIT' &&  
@@ -126,7 +126,7 @@ if(success){
                     </div>
                     <div className="form-group">
                     <label htmlFor="name">Gênero</label>
-                    <select className="form-control" onChange={onChange('genre_id')}  >
+                    <select className="form-control" onChange={onChange('genre_id')} value={genres.name} >
                         {genres.map(genre => <option key={genre.id} value={genre.id} select={genre.id === form.genre}>{genre.name}</option>)}
                         
                         </select>

@@ -152,5 +152,28 @@ SAVE STATUS
 
  49:pra SALVAR aplicar: axios.put('/api/series/'+ id ,{...form, genre_name: genreId})
 
-
+ DINAMYC CHANGE BADGE
 50: mudar o BADGE criando um {data.staus === 'STAUS' && <Badage>} mostrar badage de acordo com status
+
+
+
+START DEPLOY
+
+51: Alterar o script em packge.json pra : start-react
+
+52: Add script "start-server": "node ./node_modules/minhas-series-server/index.js "
+
+53: pra rodar os dois script ao mesmo tempo:   yarn add npm run all
+
+54: add script: "start": "npm-run-all build start-server"  pra juntar o react e o server
+
+UMBLER 
+55: usar o:   https://www.umbler.com/br/seja-bem-vindo?a=jr118z0k
+
+56: passar duas variáevis de ambiente:
+
+ NODE_ENV    production
+ BASE_DIR   /usr/src/app/
+
+ 57: deploy
+
