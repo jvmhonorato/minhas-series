@@ -1,70 +1,82 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Minhas Series
+application to manage series watched on shared streamers
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technology 
 
-### `npm start`
+Here are the technologies used in this project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* React JS
+* Bootstrap
+* Axios
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Services Used
 
-### `npm run build`
+* Github
+* Umbler
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Getting started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Dependency
+  - Babel 
+  - Eslint
+ 
+  
+  
+* To install the dependencies.
+  - npm install
+  
+* To run the project.
+  - npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to use
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 1 - Use CRUD to manege your genrs  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![minhasseries1](https://user-images.githubusercontent.com/101150943/205424944-d9b2c42a-7e6d-4d7f-9d01-0eadb33f9333.jpg)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2 -Use CRUD to manage your current series
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![minhasseries2](https://user-images.githubusercontent.com/101150943/205425029-58b26b74-75f1-4baa-804d-f9a078c445e2.jpg)
 
-### Code Splitting
+### 3 - On this page you will edit the status of your series!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![minhasseries3](https://user-images.githubusercontent.com/101150943/205425143-e2a3d752-109f-4352-95c9-596d9cb9a010.jpg)
 
-### Analyzing the Bundle Size
+### 4 - See in operation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+https://user-images.githubusercontent.com/101150943/205425224-6f85422a-7dfb-4552-8104-39f411088aeb.mp4
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Features
 
-### Advanced Configuration
+The main features of the application are:
+ - Publish Posts.
+ - Learn a lot of information <3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Links
+  - Deploy on Umbler: soon
+  - Repository: https://github.com/vituhonorato/minhas-series
+    - In case of sensitive bugs like security vulnerabilities, please contact
+      vituhonorato.89@gmail.com directly instead of using issue tracker. We value your effort
+      to improve the security and privacy of this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  ## Versioning
 
-### `npm run build` fails to minify
+  1.0.0.0
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+  ## Authors
+
+  * **JVMH** 
+
+  Please follow github and join us!
+  Thanks to visiting me and good coding!
