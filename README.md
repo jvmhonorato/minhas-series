@@ -58,8 +58,10 @@ https://user-images.githubusercontent.com/101150943/205425224-6f85422a-7dfb-4552
 ## Features
 
 The main features of the application are:
- - Publish Posts.
- - Learn a lot of information <3
+
+ - add, read, update, and delete data. (CRUD)
+ 
+  
 
 
 ## Links
