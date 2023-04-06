@@ -6,7 +6,7 @@ if you share a streamer account with someone in the family, use this app so you 
 
 ## Technology 
 
-Here are the technologies used in this project.
+Here are the technologies used in this projects.
 
 
 * React JS
