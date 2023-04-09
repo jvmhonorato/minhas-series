@@ -4,7 +4,7 @@ Application to manage series watched on shared streamers.
 if you share a streamer account with someone in the family, use this app so you don't get lost in the sequence of episodes
 
 
-## Technology 
+## Technologies
 
 Here are the technologies used in this projects.
 
